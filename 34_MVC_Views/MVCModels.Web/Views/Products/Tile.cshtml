@@ -1,0 +1,46 @@
+﻿@model IList<Product>
+@{
+    ViewData["Title"] = "Tile";
+}
+
+<body class="body-content">
+
+    <h2>All Products</h2>
+
+    <div style="display: flex; flex-wrap: wrap">
+
+        @foreach (Product product in Model)
+        {
+
+            <div style="display: flex; flex-wrap: wrap; padding-bottom: 20px; padding-top: 20px; margin-left: 50px; max-width: 25%">
+                <a style="width: 100%; margin-left: auto; margin-right: auto; display: block" asp-controller="products" asp-action="detail" asp-route-id="@product.ProductId">
+                    <img style="width: 100%;" src="~/images/@product.ImageName" />
+                </a>
+                <div style="display: flex; flex-direction: column; margin-left: 30px;">
+                    <a asp-controller="products" asp-action="detail" asp-route-id="@product.ProductId">
+                        <p style="font-size: 18px; margin: 0px">@product.Name</p>
+                    </a>
+
+                    @if (product.IsTopSeller)
+                    {
+                        <img style="width: 50%; height: auto" src="~/images/best-seller.png" />
+                    }
+
+                    <p style="margin: 0px">by @product.Manufacturer</p>
+                    <p style="color: darkred; font-weight: bold; margin: 0px">$@product.Price</p>
+                    <p style="margin: 0px"><span style="font-weight: bold">Weight</span> @product.WeightInLbs lbs</p>
+                    <img style="width: 50%; height: auto; margin: 0px" src="~/images/@product.StarImagePath" />
+                </div>
+            </div>
+        }
+
+
+
+
+
+
+
+    </div>
+</body>
+
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Echo";
+    int count = Convert.ToInt32(ViewData["count"]);
+    string word = Convert.ToString(ViewData["word"]);
+}
+
+
+<h2>Echo</h2>
+
+<nav>
+    <ul>
+        <li><a asp-controller="Home" asp-action="Echo" asp-route-word="Echo" asp-route-count="10">Echo 10</a></li>
+        <li><a asp-controller="Home" asp-action="Echo" asp-route-word = "Hello!" asp-route-count="20">Hello! 20</a></li>
+        <li><a asp-controller="Home" asp-action="Echo" asp-route-word = "Goodbye!" asp-route-count="50">Goodbye! 50</a></li>
+    </ul>
+</nav>
+
+@{ 
+
+    while (count > 0)
+    {
+        string currentFont = count.ToString() + "px";
+
+        <p style="font-size: @currentFont">@ViewData["word"]</p>
+        count--;
+    }
+
+
+}

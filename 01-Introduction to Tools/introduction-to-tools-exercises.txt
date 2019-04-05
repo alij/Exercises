@@ -1,0 +1,320 @@
+----
+1.  To begin, open your terminal, and enter the following command to change
+    directory to the exercise directory.
+----
+
+$ cd ~/YOURNAME-c/module-1/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld
+
+Note, do not enter the beginning "$" character. It represents the prompt for
+the command line. This convention is commonly used to visually separate the
+actual command from other text in Unix documentation.
+
+
+----
+2.  What does the ~ (tilde) character in the above command to change directory
+    refer to?
+----
+
+Tilde changes the directory to the user's home folder.  In this case, we are routing to a specific file beginning at the user home folder.
+
+----
+3.  A good habit to develop, especially while you're developing your skills on
+    the command line, is to confirm your location after changing directories.
+    This can be easily accomplished with the "pwd" command.
+----
+
+$ pwd
+/c/Users/Warren Stowe/exercises/01-Introduction to Tools/csharp-helloworld
+
+
+The present working directory displayed should match the directory you changed
+to in Exercise 1.  Note, the two may not match at the very beginning if you
+used the tilde when changing directories.  The tilde is a convenience to save
+you some typing.  The system resolves the tilde to the full location as it
+changes directory, and the "pwd" command reflects this.
+
+
+----
+4.  Display a list of all the files and directories in your present working
+    directory. Include all dot-files and dot-directories.  Recall the "all" and
+    "long format" flags for the "ls" command.
+----
+
+$ ls -la
+total 12
+drwxr-xr-x 1 Warren Stowe 197121   0 Jan 14 15:25 ./
+drwxr-xr-x 1 Warren Stowe 197121   0 Jan 14 15:25 ../
+drwxr-xr-x 1 Warren Stowe 197121   0 Jan 14 15:25 database/
+drwxr-xr-x 1 Warren Stowe 197121   0 Jan 14 15:25 Helloworld/
+-rw-r--r-- 1 Warren Stowe 197121 998 Jan 14 15:25 Helloworld.sln
+
+
+
+----
+5.  What do the "." and ".." directories displayed in the directory listing in
+    Exercise 4 represent?
+----
+
+. references the current directory, while .. references the parent directory of the current location.  For example, cd .. will
+relocate to the current directory's parent.
+
+----
+6.  What are the names of the files, including any dot-files, displayed in the
+    directory listing in Exercise 4?
+----
+
+Helloworld.sln is the only file in this directory.
+
+
+----
+7.  What are the names of the directories, including any dot-directories, displayed in
+    the directory listing in Exercise 4?
+----
+
+Directories include the "database" and "helloworld" directories.  The . and .. are dot directories.  
+
+
+----
+8.  Helloworld.sln is a Visual Studio project file. You will learn more about project
+    files in later lectures. As for the exercise, it is sometimes necessary (and usually
+    always interesting) to be able to view the contents of files while at the
+    command line. A friendly and easy-to-use utility that allows you to do this
+    is "less".
+
+    "less" has two great features. First, it is a file viewer. You never have
+    to worry about accidentally modifying the file, as you would if you opened it
+    in an editor.  Second, it allows you to page-up, page-down, search, and other
+    nifty navigation tasks, which can be really useful when files are big.
+
+    View the Helloworld.sln file using "less".
+
+    Or, for those who are more adventurous, you might want to try using "less" with a huge
+    file like database/pagila.sql where the utility's navigation features really
+    shine.
+
+    Press Q to quit when you are finished viewing either of the files.
+----
+
+$ less Helloworld.sln
+
+Or
+
+$ less database/pagila.sql
+
+You are encouraged to make "less" part of your standard command line toolkit.
+
+<Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld", "Helloworld\Helloworld.csproj", "{D70F7947
+
+----
+9.  This is good time to create a Git snapshot of your progress.  Usually,
+    you'll want to check the Git status to review the list of files that
+    have been modified, added, or deleted. Then you'll want to add and commit
+    those changes to your local repository.
+
+    Don't forget to save your changes to this text file before creating the snapshot.
+----
+
+Did you remember to save "introduction-to-tools-exercise.txt"?
+
+$ git status
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   ../../01-Introduction to Tools/introduction-to-tools-exercises.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+$ git add -A
+Nothing is output to the screen.  I ran git status and it confirmed the file is ready to be comitted.
+
+$ git commit -m "Good stopping point"
+$ git commit -m "Good stopping point"
+[master 576fe7d] Good stopping point
+ 1 file changed, 19 insertions(+), 7 deletions(-)
+
+
+Note, you do not need to push this commit up to BitBucket at this time. The
+typical Git workflow is to make many small commits to your local repo while
+working. You push up to BitBucket when you're ready to share.
+
+You'll be asked to push to BitBucket twice in this exercise, once a bit further
+along, and then at the end.
+
+
+----
+10.  Change into Helloworld directory under csharp-helloworld.
+    Show your present working directory after the change.
+----
+
+$ cd Helloworld
+$ pwd
+/c/Users/Warren Stowe/exercises/01-introduction to tools/csharp-helloworld/helloworld
+
+
+
+----
+11. Does the change directory command in Exercise 10 use a relative, or absolute
+    path?
+----
+
+This is a relative path.  An absolute path would begin at the starting directory and list all subsequent directories.
+
+
+----
+12. List all the files and directories, including any dot-files or dot-directories in
+    your present working directory.
+----
+
+$ ls -al
+total 10
+drwxr-xr-x 1 Warren Stowe 197121    0 Jan 14 15:25 ./
+drwxr-xr-x 1 Warren Stowe 197121    0 Jan 14 15:25 ../
+-rw-r--r-- 1 Warren Stowe 197121  186 Jan 14 15:25 App.config
+-rw-r--r-- 1 Warren Stowe 197121 2712 Jan 14 15:25 Helloworld.csproj
+-rw-r--r-- 1 Warren Stowe 197121  266 Jan 14 15:25 Program.cs
+drwxr-xr-x 1 Warren Stowe 197121    0 Jan 14 15:25 Properties/
+
+
+
+----
+13. "Program.cs" is the sole source code file of the Helloworld application.
+    Make a backup of the file named "Program.cs.backup" using the copy
+    command.
+----
+
+$ cp Program.cs Program.cs.backup
+
+The "cp" parameters are the name of the source file followed by the name of the
+destination file.
+
+$ ls
+App.config  Helloworld.csproj  Program.cs Program.cs.backup  Properties/
+
+
+
+----
+14. Rename "Program.cs.backup" to "Program.cs.copy" using the move
+    command. (There is no rename command in UNIX.)
+----
+
+$ mv Program.cs.backup Program.cs.copy
+
+The "mv" parameters are the existing name of the file followed by the new name
+of the file.
+
+$ ls
+App.config  Helloworld.csproj  Program.cs  Program.cs.copy  Properties/
+
+
+
+----
+15. Let's call this a "feature complete" point in the exercises, and not only
+    check-in to the local repository, but also push our work to our remote repository in
+    BitBucket. Pushing our work to a remote repository is a great way to ensure that we
+    don't accidentally lose work stored locally, and also enables us to share work with
+    others on our teams.
+----
+
+$ <enter the Git command to display status>
+git status
+
+$ git add introduction-to-tools-exercises.txt
+$ git add Program.cs.copy
+
+$ git commit -m "Question 15 push"
+[master ac3cac5] Question 15 push
+ 2 files changed, 56 insertions(+), 15 deletions(-)
+ create mode 100644 01-Introduction to Tools/csharp-helloworld/Helloworld/Program.cs.copy
+
+
+$ git push origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.25 KiB | 1.25 MiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+To https://bitbucket.org/te-pgh-cohort-2/WarrenStowe-c-exercises
+   576fe7d..ac3cac5  master -> master
+
+
+
+----
+16. Delete the backup file, "Program.cs.copy" using the remove command.
+----
+
+$ rm Program.cs.copy
+
+The "rm" parameter is the name of the file to be deleted.
+
+$ ls
+App.config  Helloworld.csproj  Program.cs  Properties/
+
+
+----
+17. Change directory to the csharp-helloworld directory using either one of the
+    commands shown below.
+----
+
+$ cd ..
+
+or
+
+$ cd  ~/YOURNAME-c/module-1/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld
+
+Note the first alternative relies upon the ".." parent directory notation.  In
+essence it says to change directory from the current directory's parent's parent's
+parent's parent's parent.  You'll know you're getting comfortable at the
+command line when that seems natural.
+
+Regardless of the option you chose, check your new location.
+
+$ pwd
+/c/Users/Warren Stowe/exercises/01-Introduction to Tools/csharp-helloworld
+
+
+
+----
+18. Create a documentation directory named "docs" under csharp-helloworld, and then
+    change into it.
+----
+
+$ mkdir docs
+$ cd docs
+$ ls
+This directory is empty so there is nothing to display.
+
+----
+19. Create a new file name "readme.txt" using VS Code, and add the text
+    "Hello, this is the beginning of the application's documentation."
+----
+
+$ code readme.txt
+
+Don't forget to save the file in VS Code!
+
+
+----
+20. As a final exercise, please perform the following commands to save and push your
+    work so it can be reviewed by an instructor.
+----
+
+$ git status
+
+$ git add program.cs.copy
+$ git add docs
+
+$ git commit -m "Assignment completed"
+
+$ git push origin master

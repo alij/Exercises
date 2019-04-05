@@ -1,0 +1,14 @@
+.main-profile { 
+    background-color: #688aad;
+    border-radius: 5px;
+}
+
+.main-profile * { 
+    color: #FFF;
+}
+
+#refreshButton { 
+    position: fixed;
+    right: 0;
+    top: 0;
+}

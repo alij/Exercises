@@ -1,0 +1,41 @@
+﻿@model  Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<style>
+    div p {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+</style>
+
+<h2>Product Page</h2>
+
+<div style="display: flex">
+
+    <div class="image"; style="max-width: 40%; max-height: 100%;">
+        <img src="~/images/@Model.ImageName" />
+    </div>
+
+    <div class="details"; style="display: flex; flex-direction: column; margin-top: 50px;">
+        <p style="font-size: 18px">@Model.Name
+            @if (Model.IsTopSeller)
+            {
+                <img style="width: 10%" src="~/images/best-seller.png" />
+            }
+        </p>
+
+        <p>by @Model.Manufacturer</p>
+        <img style="width: 20%; height: auto" src="~/images/@Model.StarImagePath" />
+        <p style="color: darkred">$@Model.Price</p>
+        <p><span style="font-weight: bold">Weight</span> @Model.WeightInLbs</p>
+        <p style="margin-top: 20px;"><span style="font-weight: bold">Description: </span>@Model.Description</p>
+    </div>
+</div>
+
+
+
+

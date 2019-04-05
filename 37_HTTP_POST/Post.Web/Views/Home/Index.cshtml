@@ -1,0 +1,42 @@
+﻿@model List<Review>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .border {
+        border-bottom: 1px solid black;
+    }
+</style>
+
+<section>
+
+    <img src="~/images/forDummies.png" />
+
+    @foreach (Review review in Model)
+    {
+        <div class="border">
+            <div>
+                <p>
+                    @review.ReviewTitle
+                    @while (review.Rating > 0)
+                    {
+                        <img src="~/images/star.png" />
+                        review.Rating--;
+                    }
+                </p>
+            </div>
+            <div>
+                <p>by @review.Username on @review.ReviewDate</p>
+            </div>
+            <div>
+                <p>@review.ReviewText</p>
+            </div>
+        </div>
+
+
+    }
+    <a asp-controller="home" asp-action="NewReview">
+        Submit a New Review
+    </a>
+</section>

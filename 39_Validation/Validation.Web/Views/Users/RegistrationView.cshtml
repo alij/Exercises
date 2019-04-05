@@ -1,0 +1,78 @@
+﻿@model RegistrationViewModel
+@{
+    ViewData["Title"] = "RegistrationView";
+}
+
+<style>
+    .button {
+        margin-top: 20px;
+    }
+
+    div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-top: 50px;
+    }
+
+</style>
+
+<section>
+
+    <h2>Register Account</h2>
+
+    <form asp-controller="users" asp-action="RegistrationView" method="post">
+        <div>
+            <p>First Name</p>
+            <input type="text" name="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+
+        <div>
+            <p>Last Name</p>
+            <input type="text" name="LastName" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+
+        <div>
+            <p>Email</p>
+            <input type="email" name="email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div>
+            <p>Confirm Email</p>
+            <input type="email" name="ConfirmEmail" />
+            <span asp-validation-for="ConfirmEmail"></span>
+        </div>
+
+        <div>
+            <p>Password</p>
+            <input type="password" name="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+
+        <div>
+            <p>Confirm Password</p>
+            <input type="password" name="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+
+        <div>
+            <p>Birth Date</p>
+            <input type="date" name="Birthdate" />
+            <span asp-validation-for="BirthDate"></span>
+        </div>
+
+        <div>
+            <p># of Tickets</p>
+            <input type="number" name="Tickets" />
+            <span asp-validation-for="Tickets"></span>
+        </div>
+
+        <input type="submit" value="Register" />
+    </form>
+</section>
+

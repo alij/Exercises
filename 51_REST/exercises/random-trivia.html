@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale: 1" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="random-trivia.js"></script>
+	
+	
+</head>
+<body>
+
+    <button id="refreshButton" class="btn btn-success">
+        Refresh
+    </button>
+
+    <div class="container">
+        <h1>Random Trivia Questions</h1>
+        <h2 id="score"></h2>
+    </div>
+
+    <div class="container" id="quizQuestions">   
+             
+    </div>
+
+    <template id='question-template'>
+        <div class='container'>
+            <div class='question'>
+                <div class='answer'>
+                    <a></a>
+                </div>
+            </div>
+
+        </div>
+
+    </template>
+    
+
+</body>
+</html>
+

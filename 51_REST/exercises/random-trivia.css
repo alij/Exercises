@@ -1,0 +1,12 @@
+﻿#refreshButton { 
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.triviaQuestion { 
+    border: 1px solid #000;
+    margin-bottom: 5px;
+}
+
+/* Add additional styles for the trivia question layout */

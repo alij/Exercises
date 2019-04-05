@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Fibonacci";
+    int max = Convert.ToInt32(ViewData["max"]);
+}
+
+<h2>Fibonacci</h2>
+
+<nav>
+    <ul>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="5">5</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="10">10</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max="20">20</a></li>
+    </ul>
+</nav>
+
+
+@{
+    int num1 = 0;
+    int num2 = 1;
+
+    <p style="color: #228b22">@num1</p>
+    <p>@num2</p>
+
+    int i = 3;
+
+    while (i <= max)
+    {
+        if (num1 < num2)
+        {
+            num1 = num1 + num2;
+
+            if (i == max)
+            {<p style="color: #b71b1b">@num1.ToString()</p>
+            } else {<p>@num1.ToString()</p>}
+
+        } else
+        {
+            num2 = num1 + num2;
+
+            if (i == max)
+            { <p style="color: #b71b1b">@num2.ToString()</p>} else {
+            <p> @num2.ToString() </p> }
+            }
+
+            i++;
+        }
+
+    }

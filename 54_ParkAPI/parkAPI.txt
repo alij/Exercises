@@ -1,0 +1,13 @@
+Access the Parks Database
+
+When creating project: Uncheck the Create New GIT Repository
+
+Save into 54_PartAPI in your exercises folder.
+
+Requirements:
+
+At Least:
+
+1 Get, 1 Post, 1 Put, 1 Delete
+
+Test via PostMan

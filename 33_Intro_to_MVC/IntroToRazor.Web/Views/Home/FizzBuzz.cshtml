@@ -1,0 +1,70 @@
+﻿<nav>
+    <ul>
+        <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="20">20</a></li>
+        <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="50">50</a></li>
+        <li><a asp-controller="Home" asp-action="FizzBuzz" asp-route-number="100">100</a></li>
+    </ul>
+</nav>
+
+@{
+    ViewData["Title"] = "FizzBuzz";
+    int number = Convert.ToInt32(ViewData["number"]);
+}
+
+
+<h2>FizzBuzz</h2>
+
+@{ 
+
+
+    int i = 1;
+    while (i <= number)
+    {
+
+        bool isDivisibleBy3 = false;
+        bool isDivisibleBy5 = false;
+        bool isDivisibleByBoth = false;
+
+        if (i % 3 == 0)
+        {
+            isDivisibleBy3 = true;
+        }
+
+        if (i % 5 == 0)
+        {
+            isDivisibleBy5 = true;
+        }
+
+        if (isDivisibleBy3 && isDivisibleBy5)
+        {
+            isDivisibleByBoth = true;
+        }
+
+        if (isDivisibleByBoth)
+        {
+            
+            <p style="color: #228b22; font-size: 200%">FizzBuzz</p>
+        }
+        else if (isDivisibleBy5)
+        {
+            <p style="color: red">Buzz</p>
+        }
+        else if (isDivisibleBy3)
+        {
+             <p style="color: blue">Fizz</p>
+        }
+        else
+        {
+            
+            <p>@i.ToString()</p>
+        }
+
+        i++;
+    }
+
+
+    
+}
+
+<!-- Example navigation for part 2 of exercise. -->
+
